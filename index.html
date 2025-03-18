@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+
+    <section class="header">
+        <div class="logo">
+            <img src="svg-logo/library-book-svgrepo-com.svg" alt="books" style="width:200px; height:100px;">
+            <h1 style="display: inline;">Your Library</h1>
+        </div>
+        <button class="addBook" id="addBtn">Add a book</button>
+    </section>
+
+    <section class="displayBooks">
+        <h1 style="margin-bottom: 15px;">Table of your books:</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th>Have Read?</th>
+                    <th>Delete?</th>
+                </tr>
+            </thead>
+            <tbody> </tbody>
+        </table>
+    </section>
+
+    <dialog id="addBookDialog">
+        <button id="closeDialog" aria-label="close" formnovalidate>X</button>
+        <form onsubmit="event.preventDefault(); addUserInputToTable();">
+            <div class="row">
+                <label for="title">Book Title</label>
+                <input type="text" id="title">
+            </div>
+
+            <div class="row">
+                <label for="author">Author's Name</label>
+                <input type="text" id="author">
+
+            </div>
+
+            <div class="row">
+                <label for="page">Num of Pages</label>
+                <input type="text" id="page">
+
+            </div>
+
+            <div class="row">
+                <label for="haveRead">Have you finish reading it?</label>
+                <input type="checkbox" id="haveRead">
+
+            </div>
+
+            <input type="submit" value="Add Book" class="addBook" id="addBookDialog"></button>
+        </form>
+    </dialog>
+
+</body>
+</html>
